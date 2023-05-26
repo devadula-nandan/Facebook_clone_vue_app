@@ -62,6 +62,8 @@ const actions = {
         catch (error) {
             commit('SET_ERROR', error.response.data.message);
             return { success: false, message: error.response.data.message };
+        } finally {
+            commit('SET_LOADING', false)
         }
     },
     deletePostAction({ commit }, postId) {
