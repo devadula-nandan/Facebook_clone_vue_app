@@ -66,13 +66,23 @@ const actions = {
             commit('SET_LOADING', false)
         }
     },
-    deletePostAction({ commit }, postId) {
+    async deletePostAction({ commit }, postId) {
         console.log("deleting post");
         try {
-            apiClient.delete(`/posts/${postId}`);
+            await apiClient.delete(`/posts/${postId}`);
             commit('DELETE_POST', postId);
             return { success: true };
         } catch (error) {
+            commit('SET_ERROR', error.response.data.message);
+            return { success: false, message: error.response.data.message };
+        }
+    },
+    async toggleLikeAction ({ commit }, postId) {
+        try {
+            await apiClient.put(`/posts/like/${postId}`);
+            return { success: true };
+        } catch (error) {
+            console.log(error);
             commit('SET_ERROR', error.response.data.message);
             return { success: false, message: error.response.data.message };
         }

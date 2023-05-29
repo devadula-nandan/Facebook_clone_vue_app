@@ -4,18 +4,18 @@
       <div class="grid grid-cols-4 gap-4 relative">
         <div class="col-span-1">
           <div class="sticky top-16">
-            hi
+            <LeftSection />
           </div>
         </div>
         <div class="col-span-4 lg:col-span-2">
           <!-- <pre> {{ JSON.stringify(posts, null, 2) }}</pre> -->
           <PostForm />
-          <PostCard v-for="post in posts" :key="post.id" :post="post"  @delete-post="handleDeletePost" />
+          <PostCard v-for="post in posts" :key="post.id" :post="post" />
           <SkeletonCard1 v-if="isLoading" />
         </div>
         <div class="col-span-1">
           <div class="sticky top-16">
-            hi
+            <RightSection />
           </div>
         </div>
       </div>
@@ -29,12 +29,16 @@ import { mapActions, mapGetters, mapState } from 'vuex'
 import PostForm from '@/components/PostForm.vue'
 import SkeletonCard1 from '@/components/SkeletonCard1.vue'
 import PostCard from '@/components/PostCard.vue'
+import LeftSection from '@/components/homepage/LeftSection.vue'
+import RightSection from '@/components/homepage/RightSection.vue'
 export default {
   name: 'HomePage',
   components: {
     PostForm,
     SkeletonCard1,
-    PostCard
+    PostCard,
+    LeftSection,
+    RightSection
   },
   data() {
     return {
@@ -48,14 +52,9 @@ export default {
     ...mapState('posts', ['isLoading', 'error'])
   },
   methods: {
-    ...mapActions('posts', ['fetchPosts', 'createPost', 'deletePostAction']),
+    ...mapActions('posts', ['fetchPosts', 'createPost']),
     onFileChange(event) {
       this.postImg = event.target.files[0]
-    },
-    
-    handleDeletePost(postId) {
-      // Perform the delete operation or any other logic here
-      this.deletePostAction(postId)
     },
     getETA(createdAt) {
       const createdAtDate = new Date(createdAt);
