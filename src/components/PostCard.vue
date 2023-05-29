@@ -1,6 +1,6 @@
 <template>
   <div class="card card-compact w-full bg-base-content/10 shadow-xl mb-5">
-    <div class="card-body">
+    <div class="card-body !pt-2 md:!pt-4 !pb-2 !px-2 md:!px-4">
       <div class="flex items-center">
         <div class="avatar items-center">
           <div class="w-10 h-10 rounded-full">
@@ -15,8 +15,8 @@
             </div>
           -->
         <div class="ml-4 inline-block">
-          <h2 class="text-lg mb-0 font-semibold leading-none">{{ post.User.username }}</h2>
-          <p>{{ eta }}</p>
+          <h2 class="text-base md:text-lg mb-0 font-semibold leading-none">{{ post.User.username }}</h2>
+          <p class="text-xs md:text-sm">{{ eta }}</p>
         </div>
         <div class="dropdown dropdown-end ml-auto -z-0">
           <label tabindex="0" class="btn btn-ghost hover:bg-black/5 h-[34px] px-2 min-h-0">
@@ -34,7 +34,7 @@
           </ul>
         </div>
       </div>
-      <h2 class="card-title">{{ post.title }}</h2>
+      <h2 v-if="post.title" class="card-title">{{ post.title }}</h2>
       <p>{{ post.body }}</p>
     </div>
     <figure>
@@ -56,7 +56,7 @@
         <!-- <pre>{{ JSON.stringify(user, null, 2) }}</pre> -->
 
         <div class="flex w-full">
-          <button class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base h-10 hover:bg-base-300 min-h-0"
+          <button class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base h-8 md:h-10 hover:bg-base-300 min-h-0"
             :class="yourLike ? 'text-primary' : 'text-base-content'" @click="toggleLike">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-hand-thumbs-up-fill mr-1" viewBox="0 0 16 16">
@@ -66,9 +66,9 @@
             Like
           </button>
           <button
-            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-10 hover:bg-base-300 min-h-0">Comment</button>
+            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-8 md:h-10 hover:bg-base-300 min-h-0">Comment</button>
           <button
-            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-10 hover:bg-base-300 min-h-0">Share</button>
+            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-8 md:h-10 hover:bg-base-300 min-h-0">Share</button>
         </div>
       </div>
     </div>
