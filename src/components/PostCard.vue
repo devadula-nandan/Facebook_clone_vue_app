@@ -15,8 +15,8 @@
             </div>
           -->
         <div class="ml-4 inline-block">
-          <h2 class="text-base md:text-lg mb-0 font-semibold leading-none">{{ post.User.username }}</h2>
-          <p class="text-xs md:text-sm">{{ eta }}</p>
+          <h2 class="text-lg mb-0 font-semibold leading-none">{{ post.User.username }}</h2>
+          <p class="text-sm">{{ eta }}</p>
         </div>
         <div class="dropdown dropdown-end ml-auto -z-0">
           <label tabindex="0" class="btn btn-ghost hover:bg-black/5 h-[34px] px-2 min-h-0">
