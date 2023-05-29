@@ -2,7 +2,7 @@
   <div>
     <div class="container mx-auto px-1 md:px-3">
       <div class="grid grid-cols-4 gap-4 relative">
-        <div class="col-span-1">
+        <div class="col-span-4 lg:col-span-1 hidden lg:block">
           <div class="sticky top-16">
             <LeftSection />
           </div>
@@ -13,7 +13,7 @@
           <PostCard v-for="post in posts" :key="post.id" :post="post" />
           <SkeletonCard1 v-if="isLoading" />
         </div>
-        <div class="col-span-1">
+        <div class="col-span-4 lg:col-span-1">
           <div class="sticky top-16">
             <RightSection />
           </div>

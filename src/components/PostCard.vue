@@ -1,9 +1,9 @@
 <template>
   <div class="card card-compact w-full bg-base-content/10 shadow-xl mb-5">
     <div class="card-body">
-      <div class="flex">
-        <div class="avatar">
-          <div class="w-12 rounded-full">
+      <div class="flex items-center">
+        <div class="avatar items-center">
+          <div class="w-10 h-10 rounded-full">
             <img :src="post.User.avatar" alt="" />
           </div>
         </div>
@@ -15,11 +15,11 @@
             </div>
           -->
         <div class="ml-4 inline-block">
-          <h2 class="text-lg mb-0 font-semibold">{{ post.User.username }}</h2>
+          <h2 class="text-lg mb-0 font-semibold leading-none">{{ post.User.username }}</h2>
           <p>{{ eta }}</p>
         </div>
         <div class="dropdown dropdown-end ml-auto -z-0">
-          <label tabindex="0" class="btn btn-ghost hover:bg-black/5">
+          <label tabindex="0" class="btn btn-ghost hover:bg-black/5 h-[34px] px-2 min-h-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-three-dots text-primary" viewBox="0 0 16 16">
               <path
@@ -40,25 +40,23 @@
     <figure>
       <img :src="post.postImg" alt="Post" class="w-full" />
     </figure>
-    <div class="card-body !pt-3 !pb-1">
-
-
+    <div class="card-body !pt-3 !pb-1 !px-2 md:!px-4">
       <div class="card-actions flex-col gap-1">
         <div class=" border-b border-base-content/20 pb-3 w-full">
           <div class="flex gap-2 w-full justify-between">
-            <p class="text-base mr-auto cursor-pointer hover:underline" :class="yourLike ? 'text-primary' : 'text-base-content'">{{
+            <p class=" text-xs sm:text-sm md:text-base mr-auto cursor-pointer hover:underline" :class="yourLike ? 'text-primary' : 'text-base-content'">{{
               likeStr }}</p>
             <div class="flex gap-2">
-              <p class="text-base text-base-content cursor-pointer hover:underline">500 comments
+              <p class=" text-xs sm:text-sm md:text-base text-base-content cursor-pointer hover:underline">500 comments
               </p>
-              <p class="text-base text-base-content cursor-pointer hover:underline">500 shares</p>
+              <p class=" text-xs sm:text-sm md:text-base text-base-content cursor-pointer hover:underline">500 shares</p>
             </div>
           </div>
         </div>
         <!-- <pre>{{ JSON.stringify(user, null, 2) }}</pre> -->
 
         <div class="flex w-full">
-          <button class="btn w-1/3 bg-transparent border-0 capitalize text-base h-10 hover:bg-base-300 min-h-0"
+          <button class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base h-10 hover:bg-base-300 min-h-0"
             :class="yourLike ? 'text-primary' : 'text-base-content'" @click="toggleLike">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-hand-thumbs-up-fill mr-1" viewBox="0 0 16 16">
@@ -68,9 +66,9 @@
             Like
           </button>
           <button
-            class="btn w-1/3 bg-transparent border-0 capitalize text-base text-base-content h-10 hover:bg-base-300 min-h-0">Comment</button>
+            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-10 hover:bg-base-300 min-h-0">Comment</button>
           <button
-            class="btn w-1/3 bg-transparent border-0 capitalize text-base text-base-content h-10 hover:bg-base-300 min-h-0">Share</button>
+            class="btn w-1/3 bg-transparent border-0 capitalize text-sm md:text-base text-base-content h-10 hover:bg-base-300 min-h-0">Share</button>
         </div>
       </div>
     </div>
