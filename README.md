@@ -1,4 +1,4 @@
-<!-- '{"name":"vue app"}' -->
+<!-- '{"name":"vue app","version": 12}' -->
 # vue-app
 
 ## Project setup
