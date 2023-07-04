@@ -1,4 +1,4 @@
-<!-- '{"name":"vue app","version": 12,"tech": ["Vue.js","HTML","CSS","Tailwind"]}' -->
+<!-- '{"name":"vue app","version": 12,"tech": ["Vue.js","vuex","HTML","CSS","Tailwind"]}' -->
 # vue-app
 
 ## Project setup
